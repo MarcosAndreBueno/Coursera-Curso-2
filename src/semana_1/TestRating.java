@@ -5,10 +5,13 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TestRating {
     private ArrayList<Rater> raterList = new ArrayList<>();
     private ArrayList<Rating> ratingList = new ArrayList<>();
+    private Map<Rater, Rating> myRaters = new HashMap<>();
     private int count = 0;
     private CSVParser linhas;
     private FileResource fr;
@@ -17,7 +20,7 @@ public class TestRating {
         this.fr = fr;
     }
 
-    public void setRatingList() {
+    public Map<Rater, Rating> setRatingList() {
         String rater_id = "";
         String movie_id = "";
         double rating = 0.0;
@@ -43,7 +46,10 @@ public class TestRating {
             this.ratingList.add(rtg);
             this.count += 1;
 
+            //HashMap para usar na semana 2
+            this.myRaters.put(rt, rtg);
         }
+        return this.myRaters;
     }
 
     public void testAllRaterRatings() {

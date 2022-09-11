@@ -18,7 +18,7 @@ public class TestMovie {
         this.fr = fr;
     }
 
-    public void setMovieList() {
+    public ArrayList<Movie> setMovieList() {
         String id = "";
         String title = "";
         String year = "";
@@ -33,15 +33,16 @@ public class TestMovie {
             title = linha.get(1);
             year = linha.get(2);
             country = linha.get(3);
-            genre = linha.get(4);
-            director = linha.get(5);
-            minutes = Integer.parseInt(linha.get(6));
-            poster = linha.get(7);
+//            genre = linha.get(4);
+//            director = linha.get(5);
+//            minutes = Integer.parseInt(linha.get(6));
+//            poster = linha.get(7);
 
             //salvar em lista
             this.movieList.add(new Movie(id, title, year, country, genre, director, minutes, poster));
             this.count += 1;
         }
+        return this.movieList;
     }
 
     public void testMovies() {
@@ -155,5 +156,16 @@ public class TestMovie {
             }
         }
         return movie;
+    }
+
+    public String testGetIdByMovie(String movName){
+        String movieID = "";
+        for (int i = 0; i < this.movieList.size(); i++) {
+            if (this.movieList.get(i).getTitle().equals(movName)){
+                movieID = this.movieList.get(i).getTitle();
+                return movieID;
+            }
+        }
+        return movieID;
     }
 }
