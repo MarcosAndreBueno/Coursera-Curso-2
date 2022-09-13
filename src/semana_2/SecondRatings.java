@@ -11,22 +11,23 @@ public class SecondRatings {
     private FileResource fr1;
     private FileResource fr2;
 
-    public SecondRatings(FileResource fr1,FileResource fr2) {
-        this.fr1 = fr1;
-        this.fr2 = fr2;
-        this.myMovies = new TestMovie(this.fr1).setMovieList();
+    public SecondRatings(String movieFile, String ratingFile) {
+        this.fr1 = new FileResource(movieFile);
+        this.fr2 = new FileResource(ratingFile);
+
+        this.myMovies = new TestMovie(movieFile).setMovieList();
         //key: myID e myRating //value movieID e rating
-        this.myRaters = new TestRating(this.fr2).setRatingList();
+        this.myRaters = new TestRating(ratingFile).setRatingList();
     }
 
-    public void getMovieSize(){
+    public int getMovieSize(){
         /*for (Movie m : this.myMovies){
             System.out.printf("Filme: %50s | size: %d minutos \n", m.getTitle(), m.getMinutes());
         }*/
-        System.out.printf("\nQuantidade de filmes: %d", this.myMovies.size());
+        return this.myMovies.size();
     }
 
-    public void getRaterSize(){
+    public int getRaterSize(){
         ArrayList<String> myID = new ArrayList<>();
         String id;
         for (Map.Entry<Rater, Rating> entry: this.myRaters.entrySet()){
@@ -35,7 +36,7 @@ public class SecondRatings {
                 myID.add(id);
             }
         }
-        System.out.printf("\nQuantidade de raters: %d", myID.size());
+        return myID.size();
     }
 
     public Double getAvarageRatings(){

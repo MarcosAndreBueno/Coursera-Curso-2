@@ -12,10 +12,10 @@ public class TestMovie {
     private MultiplosDados md = new MultiplosDados();
     private CSVParser linhas;
     private FileResource fr;
-    public TestMovie(FileResource fr) {
+    public TestMovie(String movieFile) {
+        this.fr = new FileResource(movieFile);
         this.linhas = fr.getCSVParser();
         this.movieList = new ArrayList<Movie>();
-        this.fr = fr;
     }
 
     public ArrayList<Movie> setMovieList() {
@@ -33,10 +33,10 @@ public class TestMovie {
             title = linha.get(1);
             year = linha.get(2);
             country = linha.get(3);
-//            genre = linha.get(4);
-//            director = linha.get(5);
-//            minutes = Integer.parseInt(linha.get(6));
-//            poster = linha.get(7);
+            genre = linha.get(4);
+            director = linha.get(5);
+            minutes = Integer.parseInt(linha.get(6));
+            poster = linha.get(7);
 
             //salvar em lista
             this.movieList.add(new Movie(id, title, year, country, genre, director, minutes, poster));

@@ -5,23 +5,25 @@ import semana_1.TestMovie;
 
 public class Main {
     public static void main(String[] args) {
-//        FileResource fr1 = new FileResource("exemplos/ratedmovies_short.csv");
-//        FileResource fr2 = new FileResource("exemplos/ratings_short.csv");
-        FileResource fr1 = new FileResource("exemplos/ratedmoviesfull.csv");
-        FileResource fr2 = new FileResource("exemplos/ratings.csv");
-//        FileResource fr1 = new FileResource("exemplos/week2_exam_ratedmovies.csv");
-//        FileResource fr2 = new FileResource("exemplos/week2_exam_ratings.csv");
+        String movieFile;
+        String ratingFile;
+        movieFile = ("exemplos/semana 1,2,3/ratedmovies_short.csv");
+        ratingFile = ("exemplos/semana 1,2,3/ratings_short.csv");
+//        movieFile = ("exemplos/semana 1,2,3/ratedmoviesfull.csv");
+//        ratingFile = ("exemplos/semana 1,2,3/ratings.csv");
+//        movieFile = ("exemplos/semana 1,2,3/week2_exam_ratedmovies.csv");
+//        ratingFile = ("exemplos/semana 1,2,3/week2_exam_ratings.csv");
 
 
-        SecondRatings sr = new SecondRatings(fr1,fr2);
-//        sr.getMovieSize();
-//        sr.getRaterSize();
-//        sr.getAvarageRatings();
+        SecondRatings sr = new SecondRatings(movieFile, ratingFile);
+//        System.out.printf("\nQuantidade de filmes: %d", + sr.getMovieSize());
+//        System.out.printf("\nQuantidade de raters: %d", + sr.getRaterSize());
+//        System.out.printf("\nQuantidade média de ratings: %f ",sr.getAvarageRatings());
 //        System.out.println(sr.getTitleByID("0068646"));
-        MovieRunnerAverage mra = new MovieRunnerAverage(fr1,fr2);
+        MovieRunnerAverage mra = new MovieRunnerAverage(movieFile, ratingFile);
 //        mra.printFileAverageRatings();
-//        String movieID = sr.getIdByTitle("Moneyball");
+//        String movieID = sr.getIdByTitle("Vacation");
 //        mra.printAverageRatingByMovieID(movieID, 0);
-//        mra.printAllMoviesAverageRating(12);
+//        mra.printAllMoviesAverageRating(2);
     }
 }

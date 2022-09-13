@@ -5,26 +5,26 @@ import edu.duke.FileResource;
 import java.util.ArrayList;
 
 public class MovieRunnerAverage {
-    FileResource fr1;
-    FileResource fr2;
-    public MovieRunnerAverage(FileResource fr1, FileResource fr2){
-        this.fr1 = fr1;
-        this.fr2 = fr2;
+    String movieFile;
+    String ratingFile;
+    public MovieRunnerAverage(String movieFile, String ratingFile){
+        this.movieFile = movieFile;
+        this.ratingFile = ratingFile;
     }
 
     public void printFileAverageRatings(){
-        SecondRatings sr = new SecondRatings(fr1,fr2);
-        System.out.printf("\nA média de ratings foi: %.4f",sr.getAvarageRatings());
+        SecondRatings sr = new SecondRatings(movieFile,ratingFile);
+        System.out.printf("\nA média de ratings foi: %f",sr.getAvarageRatings());
     }
 
     public void printAverageRatingByMovieID(String movieID, int minimalRaters){
-        SecondRatings sr = new SecondRatings(fr1,fr2);
-        System.out.printf("\nA média de ratings para o filme %s foi %.4f", movieID,
+        SecondRatings sr = new SecondRatings(movieFile,ratingFile);
+        System.out.printf("\nA média de ratings para o filme %s foi %f", movieID,
                 sr.getAverageRatingByMovieID(movieID, minimalRaters));
     }
 
     public void printAllMoviesAverageRating(int minimalRaters){
-        SecondRatings sr = new SecondRatings(fr1,fr2);
+        SecondRatings sr = new SecondRatings(movieFile,ratingFile);
         String[][] filmesComAvaliacao;
         filmesComAvaliacao = sr.getAllMoviesAverageRating(minimalRaters);
         String title;

@@ -15,9 +15,9 @@ public class TestRating {
     private int count = 0;
     private CSVParser linhas;
     private FileResource fr;
-    public TestRating(FileResource fr){
+    public TestRating(String ratingFile){
+        this.fr = new FileResource(ratingFile);;
         this.linhas = fr.getCSVParser();
-        this.fr = fr;
     }
 
     public Map<Rater, Rating> setRatingList() {

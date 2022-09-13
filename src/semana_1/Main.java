@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
 
         /* TESTE DE RATED_MOVIES*/
-//        FileResource fr = new FileResource("exemplos/ratedmoviesfull.csv");
-//        TestMovie tm = new TestMovie(fr);
-//        tm.setMovieList();
+        String movieFile = "exemplos/semana 1,2,3/ratedmoviesfull.csv";
+        TestMovie tm = new TestMovie(movieFile);
+        tm.setMovieList();
 
 //        tm.testMovies();
 //        tm.testeComedyGenres();
@@ -17,13 +17,13 @@ public class Main {
 //        tm.testGetMovieById("0068646");
 
         /* TESTE DE RATING*/
-        FileResource fr2 = new FileResource("exemplos/ratings_short.csv");
-        TestRating tr = new TestRating(fr2);
+        TestRating tr = new TestRating("exemplos/semana 1,2,3/ratings_short.csv");
         tr.setRatingList();
 //        tr.testAllRaterRatings();
-//        tr.testSpecifRaterRatings("40");
+//        tr.testSpecifRaterRatings("1");
 //        tr.testMaximumRatingByRaters();
 //        tr.testSpecificMovieRates("0068646");
 //        tr.testMoviesRated();
+
     }
 }
