@@ -1,7 +1,7 @@
 package semana_3;
 
 import edu.duke.FileResource;
-import semana_1.TestRating;
+import semana_3.refatorar_semana2.TestRating;
 
 
 public class Main {
@@ -10,10 +10,13 @@ public class Main {
         String ratingFile = "exemplos/semana 1,2,3/ratings_short.csv";
 
         //testando classe após refatorar com interface
-        TestRating tr = new TestRating(ratingFile);
-        tr.setRatingList();
-        tr.testAllRaterRatings();
+//        TestRating tr = new TestRating(ratingFile);
+//        tr.setRatingList();
+//        tr.testAllRaterRatings();
 
+
+        //testando classe EfficientRater
+        TestRating tr = new TestRating();
 
 
     }

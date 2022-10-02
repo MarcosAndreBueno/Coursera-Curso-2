@@ -1,11 +1,9 @@
-package semana_3;
+package semana_3.add_new_features;
 
 import java.util.*;
-import org.apache.commons.csv.*;
-import edu.duke.FileResource;
+
 import semana_1.Movie;
 import semana_1.TestMovie;
-import semana_3.Filter;
 
 public class MovieDatabase {
     private static HashMap<String, Movie> ourMovies;
